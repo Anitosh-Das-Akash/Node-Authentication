@@ -14,6 +14,9 @@ async function registeruser(req,res) {
         id:user._id
     },process.env.JWT_SECRET)
 
+    res.cookie("token",token)
+
+
     res.status(201).json({
         message:"User Registered Successfully",
         user,
